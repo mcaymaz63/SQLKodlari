@@ -41,3 +41,17 @@ select * from markalar;
 --şehirlerini listeleyiniz.
 SELECT isim, maas, sehir FROM calisanlar
 WHERE isyeri IN (SELECT marka_isim FROM markalar WHERE marka_id>101);
+
+-- SORU3: Ankara’da calisani olan markalarin marka id'lerini ve calisan sayilarini listeleyiniz.
+select isyeri from calisanlar where sehir = ‘Ankara’;
+select marka_id, calisan_sayisi from markalar where marka_isim in (‘Vakko’, ‘Adidas’, ‘Pierre Cardin’);
+      
+-- SORU4: Her markanin ismini, calisan sayisini ve o markaya ait calisanlarin toplam maaşini listeleyen bir Sorgu yaziniz.
+ select marka_isim,calisan_sayisi from markalar 
+ where isyeri in(select maas from calisanlar)
+
+-- SORU5: Her markanin ismini, calisan sayisini ve o markaya ait calisanlarin ortalama maaşini listeleyen bir Sorgu yaziniz.
+
+-- SORU6: Her markanin ismini, calisan sayisini ve o markaya ait calisanlarin maksimum ve minumum maaşini listeleyen bir Sorgu yaziniz.
+
+-- SORU7: Her markanin id’sini, ismini ve toplam kaç şehirde bulunduğunu listeleyen bir SORGU yaziniz
